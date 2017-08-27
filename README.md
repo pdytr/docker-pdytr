@@ -27,9 +27,10 @@ Una vez instalado Docker, debe ejecutar el siguiente comando:
 * ```docker images```
 
 Y aparecerá la siguiente información
-REPOSITORY | TAG    | IMAGE ID   | CREATED        | SIZE
------------|--------|------------|----------------|-------|
-pdytr      | latest | *imagenid* | xx minutes ago | xxxMB |
+
+| REPOSITORY | TAG    | IMAGE ID   | CREATED        | SIZE
+| -----------|--------|------------|----------------|-------|
+| pdytr      | latest | *imagenid* | xx minutes ago | xxxMB |
 
 Como correr la imagen 
 =====================
