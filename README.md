@@ -2,6 +2,9 @@ PDYTR
 =====
 Esta es una imagen docker que contienen todas las librerías y dependencias para poder realizar y ejecutar las prácticas de la materia.
 
+
+[![dockeri.co](http://dockeri.co/image/gmaron/pdytr)](https://registry.hub.docker.com/u/gmaron/pdytr/)
+
 Prerrequisitos
 ==============
 En su máquina deben tener instalado Docker.
