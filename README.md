@@ -46,3 +46,5 @@ Luego para ejecutar el container, hay que ejecutar el siguiente comando:
 * ```docker exec -it pdytr bash```
 
 A partir de allí se puede ingresar al container y ejecutar los comandos de la práctica.
+
+[![dockeri.co](http://dockeri.co/image/gmaron/pdytr)](https://registry.hub.docker.com/u/gmaron/pdytr/)
