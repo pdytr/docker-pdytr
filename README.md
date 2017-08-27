@@ -1,7 +1,6 @@
 PDYTR
 =====
-Esta es una imagen docker que contienen todas las librerías y dependencias para poder realizar y ejecutar las prácticas de la materia.
-
+Esta es una imagen docker que contiene todas las librerías y dependencias para poder realizar y ejecutar las prácticas de la materia.
 
 [![dockeri.co](http://dockeri.co/image/gmaron/pdytr)](https://registry.hub.docker.com/u/gmaron/pdytr/)
 
@@ -28,10 +27,9 @@ Una vez instalado Docker, debe ejecutar el siguiente comando:
 * ```docker images```
 
 Y aparecerá la siguiente información
-
-REPOSITORY |  TAG  | IMAGE ID | CREATED | SIZE |
------------|-----|----------|---------|------|
-pdytr | latest | *imagenid* | xx minutes ago|xxxMB
+REPOSITORY | TAG    | IMAGE ID   | CREATED        | SIZE
+-----------|--------|------------|----------------|-------
+pdytr      | latest | *imagenid* | xx minutes ago | xxxMB
 
 Como correr la imagen 
 =====================
