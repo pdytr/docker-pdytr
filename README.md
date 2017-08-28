@@ -36,7 +36,9 @@ Como correr la imagen
 =====================
 Una vez que se haya corroborado que la imagen ha sido descargada satisfactoriamente, ejecutar el siguiente comando:
 
-* ```docker run -itd --name pdytr pdytr```
+* ```docker run -itd d -v {rutaAcarpetaPractica}:/pdytr/  --name pdytr gmaron/pdytr```
+
+**Aclaración**: después del -v (volumen) tiene que ingresar una ruta de su file system para que sea una carpeta compartida entre su SO y el contenedor de Docker. Dentro de *rutaAcarpetaPractica* ponga el código desarrollado para las prácticas. 
 
 Como ingresar al container
 ==========================
