@@ -14,5 +14,7 @@ RUN apt-get update && apt-get -y upgrade \
     && apt-get update \
     && apt-get install -y openjdk-7-jdk
 
+USER 1984
+
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 
