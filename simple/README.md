@@ -3,7 +3,7 @@ Simple Image
 
 Para descargar esta imagen debe ejecutar el siguiente comando:
 
-´´´docker pull gmaron/pdytr:simple´´´
+```docker pull gmaron/pdytr:simple```
 
 Esta imagen sólo contiene
 * Java JDK 1.6
