@@ -13,9 +13,5 @@ RUN apt-get update && apt-get -y upgrade \
     && apt-get update \
     && apt-get install -y openjdk-7-jdk
 
-ADD loop.sh /loop.sh
-
-RUN chmod 755 /loop.sh
-
-ENTRYPOINT ["./loop.sh"]
+ENTRYPOINT ["./dockerstartup/vnc_startup.sh"]
 
