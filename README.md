@@ -36,7 +36,7 @@ Como correr la imagen
 =====================
 Una vez que se haya corroborado que la imagen ha sido descargada satisfactoriamente, ejecutar el siguiente comando:
 
-* ```docker run -itd -v {rutaAcarpetaPractica}:/pdytr/  --name pdytr gmaron/pdytr```
+* ```docker run -itd -v {rutaAcarpetaPractica}:/pdytr/ -p -p 5901:5901 -p 6901:6901 --name pdytr gmaron/pdytr```
 
 **Aclaración**: después del -v (volumen) tiene que ingresar una ruta de su file system para que sea una carpeta compartida entre su SO y el contenedor de Docker. Dentro de *rutaAcarpetaPractica* ponga el código desarrollado para las prácticas. 
 
@@ -47,6 +47,14 @@ Verificar que el container esté corriendo, con el siguiente comando:
 * ```docker ps```
 
 Luego para ejecutar el container, hay que ejecutar el siguiente comando:
-* ```docker exec -it pdytr bash```
+* ```docker exec --user root -it pdytr bash```
 
 A partir de allí se puede ingresar al container y ejecutar los comandos de la práctica.
+
+Para entrar con GUI al file system
+==================================
+
+Se puede ingresar de dos maneras
+=> Conectarse vía VNC viewer a la dirección localhost:5901, contraseña por defecto: vncpassword
+
+=> Conectarse vía noVNC por un cliente HTML5  http://localhost:6901/?password=vncpassword
