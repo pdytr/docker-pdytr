@@ -16,5 +16,3 @@ RUN apt-get update && apt-get -y upgrade \
 
 USER 1984
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
-
