@@ -13,6 +13,8 @@ RUN apt-get update && apt-get -y upgrade \
     && add-apt-repository -y ppa:openjdk-r/ppa \
     && apt-get update \
     && apt-get install -y openjdk-7-jdk
+    && apt-get install -y rpcbind \
+    && mdkir /run/sendsigs.omit.d/ \
 
 USER 1984
 
