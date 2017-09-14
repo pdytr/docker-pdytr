@@ -6,9 +6,7 @@ RUN apt-get update && apt-get -y upgrade \
     && apt-get install -y build-essential \
     && apt-get install -y nano \
     && apt-get install -y net-tools \
-    && apt-get install -y rpcbind \
-    && mdkir /run/sendsigs.omit.d/ \
-  
+    && apt-get install -y rpcbind   
 ADD loop.sh /loop.sh
 
 RUN chmod 755 /loop.sh
