@@ -1,48 +1,33 @@
-
-# PDYTR Docker Image
-
+# GUI Docker Image
 ## Dockerfile
 
-The `Dockerfile` in this directory contains the necessary instructions to build the Docker image for the PDYTR application. It includes the dependencies and configurations required to set up the environment with JADE and other necessary tools.
-
-The Dockerfile performs the following steps:
-- Uses the `openjdk:8-jdk-alpine` base image.
-- Installs necessary dependencies such as `gcc`, `g++`, `libc-dev`, `make`, `cmake`, `git`, `maven`, `wget`, and `unzip`.
-- Downloads and installs JADE (Java Agent DEvelopment Framework).
-- Sets the required environment variables.
-- Sets the working directory to `/app`.
-- Keeps the container running with a default command.
+The `Dockerfile` in this directory contains the necessary instructions to build the Docker image for the graphical user interface (GUI) of the PDYTR application. It includes the dependencies and configurations required to run the GUI application.
 
 To build the image, navigate to this directory in your terminal and run the following command:
 
-```sh
-docker build -t pdytr .
+```
+docker build -t pdytr-gui .
 ```
 
 ## Makefile
 
 The `Makefile` in this directory provides a convenient way to build and run the Docker image. It includes the necessary commands to build the image and run a container based on it.
 
-### Building the Image
-
 To build the image using the Makefile, navigate to this directory in your terminal and run the following command:
 
-```sh
+```
 make build
 ```
 
-### Running the Container
-
 To run a container based on the image, use the following command:
 
-```sh
+```
 make run
 ```
 
 Please note that you may need to adjust the port number in the Makefile if port 8080 is already in use on your system.
 
-## References
-
 For more information on Docker and how to use it, refer to the [official Docker documentation](https://docs.docker.com/).
 
 For more information on Make and how to use it, refer to the [official Make documentation](https://www.gnu.org/software/make/).
+

@@ -1,1 +1,69 @@
+# Ignore node_modules, if you're using Node.js
+node_modules/
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore Java compiled files
+*.class
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore Docker files
+**/Dockerfile
+
+# Ignore Docker images and containers
+**/output/
+**/tmp/
+
+# Ignore system files
 .DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore binaries
+bin/
+obj/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore IntelliJ IDEA files
+*.iml
+.idea/
+
+# Ignore JetBrains Rider files
+*.sln.iml
+
+# Ignore package managers
+*.lock
+package-lock.json
+yarn.lock
+pipfile.lock
+
+# Ignore environment variables
+.env
+
+# Ignore coverage reports
+coverage/
+*.lcov
+*.lcov.*
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore temporary files
+*.swp
+*~

@@ -1,19 +1,24 @@
-FROM consol/ubuntu-xfce-vnc:latest
+FROM rsolano/alpine-vnc:latest
 
-MAINTAINER Gaston Maron "gastonmaron@gmail.com"
-ENV REFRESHED_AT 2017-08-30
+RUN apk add --no-cache \
+    gcc \
+    g++ \
+    libc-dev \
+    make \
+    cmake \
+    git \
+    maven \
+    wget \
+    unzip
 
-USER 0
+# Descargar e instalar JADE
+RUN mkdir -p /opt/jade \
+    && cd /opt/jade \
+    && wget --no-check-certificate https://jade.tilab.com/dl.php?file=JADE-bin-4.5.0.zip -O jade-bin-4.5.0.zip \
+    && unzip jade-bin-4.5.0.zip \
+    && rm jade-bin-4.5.0.zip
 
-RUN apt-get update && apt-get -y upgrade \
-    && apt-get install -y build-essential \
-    && apt-get install -y nano \
-    && apt-get install -y net-tools \
-    && apt-get install -y software-properties-common \
-    && add-apt-repository -y ppa:openjdk-r/ppa \
-    && apt-get update \
-    && apt-get install -y openjdk-7-jdk \
-    && apt-get install -y rpcbind 
-    
-USER 1984
+# Establecer las variables de entorno necesarias
+ENV CLASSPATH="/opt/jade/jade/lib/jade.jar:/opt/jade/lib/commons-codec/commons-codec-1.3.jar"
 
+WORKDIR /app

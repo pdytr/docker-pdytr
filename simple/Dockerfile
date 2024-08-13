@@ -1,14 +1,28 @@
-FROM java:6-jdk
- 
-MAINTAINER Gaston Maron "gastonmaron@gmail.com"
-  
-RUN apt-get update && apt-get -y upgrade \
-    && apt-get install -y build-essential \
-    && apt-get install -y nano \
-    && apt-get install -y net-tools \
-    && apt-get install -y rpcbind   
-ADD loop.sh /loop.sh
+FROM openjdk:8-jdk-alpine
 
-RUN chmod 755 /loop.sh
+# Instalar dependencias necesarias
+RUN apk add --no-cache \
+    gcc \
+    g++ \
+    libc-dev \
+    make \
+    cmake \
+    git \
+    maven \
+    wget \
+    unzip
 
-ENTRYPOINT ["./loop.sh"]
+# Descargar e instalar JADE
+RUN mkdir -p /opt/jade \
+    && cd /opt/jade \
+    && wget --no-check-certificate https://jade.tilab.com/dl.php?file=JADE-bin-4.5.0.zip -O jade-bin-4.5.0.zip \
+    && unzip jade-bin-4.5.0.zip \
+    && rm jade-bin-4.5.0.zip
+
+# Establecer las variables de entorno necesarias
+ENV CLASSPATH="/opt/jade/lib/jade.jar:/opt/jade/lib/commons-codec/commons-codec-1.3.jar"
+
+WORKDIR /app
+
+# Comando por defecto para mantener el contenedor en ejecución
+CMD ["tail", "-f", "/dev/null"]
