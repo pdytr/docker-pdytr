@@ -1,16 +1,18 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:22-jdk-slim
 
 # Instalar dependencias necesarias
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
+    protobuf-compiler \
     gcc \
     g++ \
-    libc-dev \
     make \
     cmake \
     git \
     maven \
     wget \
-    unzip
+    libssl-dev \ 
+    unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 # Descargar e instalar JADE
 RUN mkdir -p /opt/jade \
