@@ -1,33 +1,31 @@
-# GUI Docker Image
+# GUI Folder
+
+This directory contains all the necessary files for distributed programming and real-time systems practice assignments. The environment is equipped with a VNC server to provide a graphical user interface (GUI) when required.
+
 ## Dockerfile
 
-The `Dockerfile` in this directory contains the necessary instructions to build the Docker image for the graphical user interface (GUI) of the PDYTR application. It includes the dependencies and configurations required to run the GUI application.
+The `Dockerfile` in this directory is used to build the Docker image that includes the environment required for the assignments. Specifically, this Dockerfile:
 
-To build the image, navigate to this directory in your terminal and run the following command:
+- Uses a lightweight base image.
+- Installs Java 22 and the Jade libraries.
+- Sets up a VNC server to enable a graphical user interface (GUI) if needed.
+- Configures all the dependencies and necessary settings to run the GUI and other relevant components of the project.
 
-```
-docker build -t pdytr-gui .
-```
+This Dockerfile is designed to simplify work on distributed programming and real-time systems assignments, with the added flexibility of a GUI accessible via VNC.
 
 ## Makefile
 
-The `Makefile` in this directory provides a convenient way to build and run the Docker image. It includes the necessary commands to build the image and run a container based on it.
+The `Makefile` in this directory provides a set of useful commands for managing the development environment and the GUI. Below are the actions you can perform using the Makefile:
 
-To build the image using the Makefile, navigate to this directory in your terminal and run the following command:
+- `make build`: Builds the Docker image for the SIMPLE environment.
+- `make run`: Runs the Docker container with the configured environment and the VNC server.
+- `make stop`: Stops the running Docker container.
+- `make clean`: Removes the created Docker image.
 
-```
-make build
-```
+To execute any of these commands, navigate to the project's root directory and run `make <command>`.
 
-To run a container based on the image, use the following command:
+### Additional Notes
 
-```
-make run
-```
-
-Please note that you may need to adjust the port number in the Makefile if port 8080 is already in use on your system.
-
-For more information on Docker and how to use it, refer to the [official Docker documentation](https://docs.docker.com/).
-
-For more information on Make and how to use it, refer to the [official Make documentation](https://www.gnu.org/software/make/).
-
+- **Customization:** You may need to modify the Makefile to suit the specific requirements of your project or working environment.
+- **Using the GUI:** To access the GUI, connect to the VNC server using a VNC client after running the container.
+- **Compatibility:** Ensure that your system meets the requirements to run Docker and the tools included in this setup.

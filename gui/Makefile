@@ -1,7 +1,7 @@
 # Nombre de la imagen
 IMAGE_NAME = alpine-vnc-image
 CONTAINER_NAME = alpine-vnc-container
-VNC_PORT = 5900
+VNC_PORT = 5901
 
 # Construir la imagen de Docker
 build: clean
@@ -9,7 +9,7 @@ build: clean
 
 # Ejecutar el contenedor de Docker
 run:
-	docker run -it --rm --name $(CONTAINER_NAME) -p $(VNC_PORT):5900 -v ${PWD}:/app $(IMAGE_NAME)
+	docker run -it --rm --name $(CONTAINER_NAME) -p $(VNC_PORT):5901 -v ${PWD}:/app $(IMAGE_NAME)
 
 # Detener y eliminar el contenedor
 stop:
@@ -22,6 +22,6 @@ clean:
 
 # Ejecutar un comando en el contenedor de Docker
 exec:
-	docker exec -it $(CONTAINER_NAME) ash
+	docker exec -it $(CONTAINER_NAME) /bin/bash
 
 .PHONY: build run stop clean exec
