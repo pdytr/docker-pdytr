@@ -21,7 +21,7 @@ Cualquier duda o problema que tengan, por favor, envíenme un mail a [gastonmaro
 Descargar imagen docker
 =======================
 Una vez instalado Docker, debe ejecutar el siguiente comando:
-* ```docker pull gmaron/pdytr```
+* ```docker pull gmaron/pdytr:gui```
 
 Verificar que la imagen haya sido descargada correctamente mediante el comando
 * ```docker images```
@@ -36,7 +36,7 @@ Como correr la imagen
 =====================
 Una vez que se haya corroborado que la imagen ha sido descargada satisfactoriamente, ejecutar el siguiente comando:
 
-* ```docker run -itd -v {rutaAcarpetaPractica}:/pdytr/ -p 5901:5901 -p 6901:6901 --name pdytr gmaron/pdytr```
+* ```docker run -itd -v {rutaAcarpetaPractica}:/pdytr/ -p 5901:5901 -p 6901:6901 --name pdytr gmaron/pdytr:gui```
 
 **Aclaración**: después del -v (volumen) tiene que ingresar una ruta de su file system para que sea una carpeta compartida entre su SO y el contenedor de Docker. Dentro de *rutaAcarpetaPractica* ponga el código desarrollado para las prácticas. 
 
